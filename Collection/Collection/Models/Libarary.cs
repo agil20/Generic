@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Collection.Models
 {
-    internal class Libarary
+    internal class Libarary:Book
     {
 
         public int BookLimit { get; set; }
@@ -69,9 +69,10 @@ namespace Collection.Models
                 foreach (var item in Books)
                 {
                     if (id == item.Id)
-                    {
+                    { 
                         Books.Remove(item);
                         Book book=new Book();
+                        Console.WriteLine($"item.id {item.Id} silindi");
                         book.ShowInfo();
 
                     }
@@ -88,6 +89,10 @@ namespace Collection.Models
         public Libarary(int booklimit)
         { BookLimit=booklimit; 
 
+        }
+        public override void Sell()
+        {
+            
         }
     }
 }

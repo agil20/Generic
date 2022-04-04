@@ -21,24 +21,38 @@ namespace Collection.Models
         {
             if (Count==0)
             {
+
                Exception.ProductCountIsZeroException();
             }
-            return;
+            else
+            {
+                Count--;
+                Console.WriteLine($"Name{Name}\n" +
+                          
+                            $"Count {Count}\n" +
+                        
+                            $"AuthorName {AuthorName}\n" +
+                            $"PageCount {PageCount}");
+                TotalInCome++;
+            }
+
+            
         }
 
         public override void ShowInfo()
         {
             Console.WriteLine($"Name{Name}\n" +
-                            $"Price {Price}\n" +
+                           
                             $"Count {Count}\n" +
-                            $"TotalInCome {TotalInCome}\n" +
+                        
                             $"AuthorName {AuthorName}\n" +
                             $"PageCount {PageCount}");
-            Count--;
-            TotalInCome++;
+          
+         
         }
-        public Book(string name,string authorName,int pageCount)
-        { Name = name; AuthorName = authorName; PageCount = pageCount; 
+        public Book(string name,string authorName,int pageCount,int count)
+        {
+            Count = count; Name = name; AuthorName = authorName; PageCount = pageCount; 
 
         }//*ps: name, price, authorName, pageCount dəyərləri olmadan book obyekti yaratmaq olmaz.*/
     }
