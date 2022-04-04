@@ -10,6 +10,10 @@ namespace Collection.Models
     {/*Book class (Product-dan miras alır)
 - AuthorName
 - PageCount*/
+        public Book()
+        {
+
+        }
         public  string AuthorName { get; set; }
         public int PageCount { get; set; }
 
@@ -17,8 +21,7 @@ namespace Collection.Models
         {
             if (Count==0)
             {
-                Exceptionn exception = new Exceptionn();
-                exception.ProductCountIsZeroException();
+               Exception.ProductCountIsZeroException();
             }
             return;
         }

@@ -6,11 +6,7 @@ namespace Collection
     {
         static void Main(string[] args)
         {
-            /*
-  Product abstrakt class
- 
-  - ShowInfo() - abstrakt method olacaq
-  */
+    /
         }
     }
 }

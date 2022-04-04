@@ -6,19 +6,20 @@ using System.Threading.Tasks;
 
 namespace Collection.Models
 {
-    internal class Exceptionn:Exception
+    internal class Exception
     {
-        public  void ProductCountIsZeroException()
+        public static  void ProductCountIsZeroException()
         {
-            Console.WriteLine("Praducr Count Is Zero Exception");
+            //  Console.WriteLine("Praducr Count Is Zero Exception")
+            throw new System.Exception("Product Count Is Zero Exception");
         }
-        public  void CapacityLimitException()
+        public static void CapacityLimitException()
         {
-            Console.WriteLine("Capacity Limit Exception");
+            throw new System.Exception("Capacity Limit Exception");
         }
-        public  void NotFoundException()
+        public static  void NotFoundException()
         {
-            Console.WriteLine("Not Faund Exception");
+            throw new System.Exception("Not Found Exception");
         }
     }
 }
