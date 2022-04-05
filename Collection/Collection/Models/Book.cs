@@ -12,7 +12,7 @@ namespace Collection.Models
 - PageCount*/
         public Book()
         {
-
+            
         }
         public  string AuthorName { get; set; }
         public int PageCount { get; set; }
@@ -30,7 +30,7 @@ namespace Collection.Models
                
                 TotalInCome = TotalInCome + Price;
 
-                Console.WriteLine($"Name{Name}\n" +
+                Console.WriteLine($"Name {Name}\n" +
 
                                 $"Count {Count}\n" +
 
@@ -54,13 +54,15 @@ namespace Collection.Models
                             $"AuthorName {AuthorName}\n" +
                             $"PageCount {PageCount}\n" +
                             $"Price {Price}\n" +
-                            $"TotalInCome {TotalInCome}");
+                            $"TotalInCome {TotalInCome}\n" +
+                            $"Id {Id}");
           
          
         }
         public Book(string name,int price,string authorName,int pageCount,int count)
         {
             Price = price; Count = count; Name = name; AuthorName = authorName; PageCount = pageCount;
+            
           
 
         }
