@@ -19,10 +19,8 @@ namespace Collection.Models
             {
                 BookLimit--;
                 Books.Add(book);
-                foreach (Book item in Books)
-                {
-                    item.ShowInfo();
-                }
+              
+                Console.WriteLine($"elave olundu {book.Name} sayi {book.Count} yazici {book.AuthorName} id'si {book.Id} qiymeti  {book.Price} Sehive sayi {book.PageCount} ");
             }
             else
             {
@@ -46,12 +44,9 @@ namespace Collection.Models
                 {
                     if (id==item.Id)
                     {
-                        
+                        Console.WriteLine("Istediyiniz kitab");
                         item.ShowInfo();
-                        foreach (Book i in Books)
-                        {
-                            Console.WriteLine(i);
-                        }
+                       
 
 
                     }
@@ -61,35 +56,22 @@ namespace Collection.Models
         }
         public void RemoveById(int?id)
         {
-            if (id == null)
+            foreach (var item in Books)
             {
-
-
-                throw new System.Exception("Null Reference Exception");
-
-            }
-            else
-            {
-                foreach (var item in Books)
+                if (id == item.Id)
                 {
-                    if (id == item.Id)
-                    { 
-                        Books.Remove(item);
-                       
-                        Console.WriteLine($"item.id {item.Id} silindi");
-                       item.ShowInfo();
-                        foreach (var a in Books)
-                        {
-                            Console.WriteLine(a);
-                        }
-
-                    }
-                    else
-                    {
-                        Exception.NotFoundException();
-                    }
+                    Console.WriteLine($"Silindi {item.Id}");
+                    item.ShowInfo();
                 }
+                else if (id == null)
+                {
+                    throw new System.Exception();
+                }
+                
+
             } 
+            
+           
 
         }
 

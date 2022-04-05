@@ -26,7 +26,8 @@ namespace Collection.Models
                 Count--;
                
                 TotalInCome = TotalInCome + Price;
-                ShowInfo();
+                Console.WriteLine($"Satildi {Id}- li kitab \n" +
+                    $"Umumi gelir {TotalInCome}");
 
             }
 
@@ -50,7 +51,7 @@ namespace Collection.Models
         public Book(string name,int price,string authorName,int pageCount,int count) : base(name,price,count)
         {
             Price = price; Count = count; Name = name; AuthorName = authorName; PageCount = pageCount;
-           
+         
           
 
         }

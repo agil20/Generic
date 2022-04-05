@@ -10,15 +10,16 @@ namespace Collection.Models
     {
         private static int _id;
 
-        public int Id { get { return   _id; } set{ _id = 1; }} 
+        public int Id { get;  }
         public string Name { get; set; }
         public int Price { get; set; }
-        public static int Count { get; set; }
+        public int Count { get; set; }
         public static int TotalInCome { get; set; }
         public abstract void Sell();
         public Praduct(string name,int price,int count)
         { Name = name; Price = price; Count = count; 
             _id++;
+            Id = _id;
             
         }
         public abstract void ShowInfo();
