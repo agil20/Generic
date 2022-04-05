@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Collection.Models
 {
-    internal class Libarary:Book
+    internal class Libarary
     {
-
+        public int Count { get; set; }
         public int BookLimit { get; set; }
         List<Book>Books=new List<Book>();
         
@@ -19,7 +19,7 @@ namespace Collection.Models
             {
                 BookLimit--;
                 Books.Add(book);
-                foreach (var item in Books)
+                foreach (Book item in Books)
                 {
                     item.ShowInfo();
                 }
@@ -46,9 +46,9 @@ namespace Collection.Models
                 {
                     if (id==item.Id)
                     {
-                        Book book=new Book();
-                        book.ShowInfo();
-                        foreach (var i in Books)
+                        
+                        item.ShowInfo();
+                        foreach (Book i in Books)
                         {
                             Console.WriteLine(i);
                         }
@@ -75,9 +75,9 @@ namespace Collection.Models
                     if (id == item.Id)
                     { 
                         Books.Remove(item);
-                        Book book=new Book();
+                       
                         Console.WriteLine($"item.id {item.Id} silindi");
-                        book.ShowInfo();
+                       item.ShowInfo();
                         foreach (var a in Books)
                         {
                             Console.WriteLine(a);

@@ -10,10 +10,7 @@ namespace Collection.Models
     {/*Book class (Product-dan miras alır)
 - AuthorName
 - PageCount*/
-        public Book()
-        {
-            
-        }
+       
         public  string AuthorName { get; set; }
         public int PageCount { get; set; }
 
@@ -29,16 +26,7 @@ namespace Collection.Models
                 Count--;
                
                 TotalInCome = TotalInCome + Price;
-
-                Console.WriteLine($"Name {Name}\n" +
-
-                                $"Count {Count}\n" +
-
-                                $"AuthorName {AuthorName}\n" +
-                                $"PageCount {PageCount}\n" +
-                                $"Price {Price}\n" +
-                                $"TotalInCome {TotalInCome}");
-
+                ShowInfo();
 
             }
 
@@ -47,7 +35,7 @@ namespace Collection.Models
 
         public override void ShowInfo()
         {
-            Console.WriteLine($"Name{Name}\n" +
+            Console.WriteLine($"Name {Name}\n" +
                            
                             $"Count {Count}\n" +
                         
@@ -59,10 +47,10 @@ namespace Collection.Models
           
          
         }
-        public Book(string name,int price,string authorName,int pageCount,int count)
+        public Book(string name,int price,string authorName,int pageCount,int count) : base(name,price,count)
         {
             Price = price; Count = count; Name = name; AuthorName = authorName; PageCount = pageCount;
-            
+           
           
 
         }
