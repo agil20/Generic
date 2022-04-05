@@ -11,22 +11,24 @@ namespace Collection.Models
 
         public int BookLimit { get; set; }
         List<Book>Books=new List<Book>();
-        public int Count { get; set; }
-        //- AddBook() - Parametr olaraq bir Book obyekti qəbul edir və books listinə əlavə edir əgər BookLimiti
-        //aşırsa geriyə CapacityLimitException qaytarsın
+        
+       
         public void AddBook(Book book)
         {
             if (Count<=BookLimit)
             {
+                BookLimit--;
                 Books.Add(book);
+                foreach (var item in Books)
+                {
+                    item.ShowInfo();
+                }
             }
             else
             {
                 Exception.CapacityLimitException();
             }
-   //- GetBookById() - Parametr olaraq nullable bir id qəbul edir və
-   //o Book obyektini tapıb geriyə qaytarır əgər id null olarsa geriyə NullReferenceException qaytarsın
-   //ümumiyyətlə göndərilən id-li book-u tapmasa geriyə null qaytarsın.
+  
 
         }
         public void GetBookById(int?id)
@@ -46,15 +48,17 @@ namespace Collection.Models
                     {
                         Book book=new Book();
                         book.ShowInfo();
+                        foreach (var i in Books)
+                        {
+                            Console.WriteLine(i);
+                        }
+
 
                     }
                 }
             }
 
         }
-        /*- RemoveById() - Parametr olaraq nullable bir id qəbul edir və o Book obyektini tapıb 
-                    * Books listindən silir əgər id null olarsa geriyə
-                 * NullReferenceException qaytarsın ümumiyyətlə göndərilən id-li book-u tapmasa geriyə*/
         public void RemoveById(int?id)
         {
             if (id == null)
@@ -74,6 +78,10 @@ namespace Collection.Models
                         Book book=new Book();
                         Console.WriteLine($"item.id {item.Id} silindi");
                         book.ShowInfo();
+                        foreach (var a in Books)
+                        {
+                            Console.WriteLine(a);
+                        }
 
                     }
                     else
@@ -90,9 +98,6 @@ namespace Collection.Models
         { BookLimit=booklimit; 
 
         }
-        public override void Sell()
-        {
-            
-        }
+      
     }
 }

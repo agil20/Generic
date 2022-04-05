@@ -27,16 +27,22 @@ namespace Collection.Models
             else
             {
                 Count--;
+               
+                TotalInCome = TotalInCome + Price;
+
                 Console.WriteLine($"Name{Name}\n" +
-                          
-                            $"Count {Count}\n" +
-                        
-                            $"AuthorName {AuthorName}\n" +
-                            $"PageCount {PageCount}");
-                TotalInCome++;
+
+                                $"Count {Count}\n" +
+
+                                $"AuthorName {AuthorName}\n" +
+                                $"PageCount {PageCount}\n" +
+                                $"Price {Price}\n" +
+                                $"TotalInCome {TotalInCome}");
+
+
             }
 
-            
+
         }
 
         public override void ShowInfo()
@@ -46,14 +52,18 @@ namespace Collection.Models
                             $"Count {Count}\n" +
                         
                             $"AuthorName {AuthorName}\n" +
-                            $"PageCount {PageCount}");
+                            $"PageCount {PageCount}\n" +
+                            $"Price {Price}\n" +
+                            $"TotalInCome {TotalInCome}");
           
          
         }
-        public Book(string name,string authorName,int pageCount,int count)
+        public Book(string name,int price,string authorName,int pageCount,int count)
         {
-            Count = count; Name = name; AuthorName = authorName; PageCount = pageCount; 
+            Price = price; Count = count; Name = name; AuthorName = authorName; PageCount = pageCount;
+          
 
-        }//*ps: name, price, authorName, pageCount dəyərləri olmadan book obyekti yaratmaq olmaz.*/
-    }
+        }
+        
+    } 
 }
